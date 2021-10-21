@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  GeneralUIErrorTest
-//
-//  Created by Anton on 20/10/2021.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -14,8 +7,11 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+enum GeneralUIError {
+	case connection
+	case critical
+}
+
+enum RegistrationFlowError: Error {
+	case general
 }

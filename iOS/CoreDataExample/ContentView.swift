@@ -13,7 +13,8 @@ struct ContentView: View {
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
+        animation: .default
+	)
     private var items: FetchedResults<Item>
 
     var body: some View {
@@ -27,6 +28,9 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
+				.onMove { _, _ in
+					print("kek")
+				}
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
